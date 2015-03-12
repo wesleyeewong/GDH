@@ -15,5 +15,8 @@ function loadJSON(callback) {
 function init() {
 	loadJSON(function(response) {
 		var actual_JSON=JSON.parse(response);
+		console.log(actual_JSON);
 	});
 }
+
+document.addEventListener('DOMContentLoaded', init);
