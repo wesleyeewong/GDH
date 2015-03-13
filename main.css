@@ -2,6 +2,7 @@ body {
 	width: 500px;
 	height: 300px;
 	margin: 15px;
+	float:left;
 }
 
 a:link {color:black;}
@@ -11,3 +12,9 @@ a:active {color:grey;}
 
 
 .rows:hover {background-color:rgb(240,240,240);}
+
+h1 {
+	width:50%;
+	margin:0px;
+	padding-right:0px;
+}

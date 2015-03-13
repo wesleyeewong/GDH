@@ -1,8 +1,10 @@
 function loadJSON(callback) {
 
 	var xobj = new XMLHttpRequest();
+	var url = refresh();
+	console.log(url);
 	xobj.overrideMimeType("application/json");
-	xobj.open('GET', 'http://www.reddit.com/r/gamedeals/new.json?sort=new', true);
+	xobj.open('GET', url, true);
 	xobj.onreadystatechange = function () {
 		if (xobj.readyState == 4 && xobj.status == "200") {
 			callback(xobj.responseText);
@@ -32,6 +34,13 @@ function init() {
 			document.getElementById('content').innerHTML=stuff;
 		}
 	});
+}
+
+function refresh() {
+	console.log(document.getElementById('subreddit').value);
+	var value = "http://www.reddit.com/r/" + document.getElementById('subreddit').value + "/new.json?sort=new";
+	return value;
+
 }
 
 document.addEventListener('DOMContentLoaded', init);
