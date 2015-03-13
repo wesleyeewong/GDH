@@ -19,7 +19,16 @@ function init() {
 		console.log(actual_JSON.data.children[0].data.title);
 		var stuff = "";
 		for (var i = 0; i < 5; i++) {
-			stuff += "<div class='rows'> <img src='" + actual_JSON.data.children[i].data.thumbnail + "' width=10px height=10px>" + "<a href='" + actual_JSON.data.children[i].data.url + "'>" + actual_JSON.data.children[i].data.title + "</a></div>";
+			if (actual_JSON.data.children[i].data.thumbnail!=="default") {
+			stuff += "<div class='rows'> <table style='width:100%'> <tr><td style='width:60px, height:60px'><img src='" + actual_JSON.data.children[i].data.thumbnail + "' width=60px height=60px></td>" + 
+"<td><a href='" + actual_JSON.data.children[i].data.url + "' target='_blank'>" + actual_JSON.data.children[i].data.title + "</a></td></tr></table></div>";
+				console.log(actual_JSON.data.children[i].data.thumbnail);
+			} 
+			else {
+				stuff += "<div class='rows'> <table style='width:100%'> <tr><td style='width:60px, height:60px'><img src='icon.png' width=60px height=60px></td>" + 
+"<td><a href='" + actual_JSON.data.children[i].data.url + "' target='_blank'>" + actual_JSON.data.children[i].data.title + "</a></td></tr></table></div>";
+				console.log("else");
+			}
 			document.getElementById('content').innerHTML=stuff;
 		}
 	});

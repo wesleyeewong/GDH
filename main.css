@@ -1,5 +1,13 @@
 body {
-	width: 350px;
+	width: 500px;
 	height: 300px;
 	margin: 15px;
 }
+
+a:link {color:black;}
+a:visited {color:black;}
+a:hover {color:grey;}
+a:active {color:grey;}
+
+
+.rows:hover {background-color:rgb(240,240,240);}
